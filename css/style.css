@@ -1659,20 +1659,20 @@ body.menu-open {
   }
 }
 @media (min-width: 20em) and (max-width: 90em) {
-  @supports (row-gap: clamp( 3.125rem , 2.2678571429rem  +  4.2857142857vw , 6.125rem )) {
+  @supports (row-gap: clamp( 2.5rem , 1.4642857143rem  +  5.1785714286vw , 6.125rem )) {
     .collection__wrap {
-      row-gap: clamp( 3.125rem , 2.2678571429rem  +  4.2857142857vw , 6.125rem );
+      row-gap: clamp( 2.5rem , 1.4642857143rem  +  5.1785714286vw , 6.125rem );
     }
   }
-  @supports not (row-gap: clamp( 3.125rem , 2.2678571429rem  +  4.2857142857vw , 6.125rem )) {
+  @supports not (row-gap: clamp( 2.5rem , 1.4642857143rem  +  5.1785714286vw , 6.125rem )) {
     .collection__wrap {
-      row-gap: calc(3.125rem + 3 * (100vw - 20rem) / 70);
+      row-gap: calc(2.5rem + 3.625 * (100vw - 20rem) / 70);
     }
   }
 }
 @media (max-width: 20em) {
   .collection__wrap {
-    row-gap: 3.125rem;
+    row-gap: 2.5rem;
   }
 }
 .collection__wrap--category {

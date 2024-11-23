@@ -436,7 +436,7 @@ body {
 		grid-template-columns: repeat(auto-fit, minmax(toRem(230), 1fr));
 		grid-auto-rows: toRem(580);
 		@include adaptiveValue("column-gap", 54, 20);
-		@include adaptiveValue("row-gap", 98, 50);
+		@include adaptiveValue("row-gap", 98, 40);
 		row-gap: toRem(98);
 		justify-content: space-between;
 		margin-bottom: toRem(122);
