@@ -429,3 +429,24 @@ if (scrollToTopBtn) {
 function topFunction() {
 	window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+
+const lazyImages = document.querySelectorAll('.lazy-image');
+
+const loadImage = (image) => {
+	image.src = image.dataset.src;
+	image.classList.remove('lazy-image');
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+	entries.forEach(entry => {
+		if (entry.isIntersecting) {
+			loadImage(entry.target);
+			observer.unobserve(entry.target);
+		}
+	});
+}, {
+	rootMargin: '200px', // почати завантаження на 200px раніше, ніж зображення з'явиться в межах екрану
+});
+
+lazyImages.forEach(image => observer.observe(image));
