@@ -107,12 +107,6 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 
 .filter-icon {
 	padding-top: toRem(10);
-	// top: toRem(190);
-	// left: toRem(15);
-	// transition: top 0.3s;
-	// &.scrolled {
-	// 	top: toRem(80);
-	// }
 	img {
 		width: toRem(25);
 		height: toRem(25);
@@ -303,7 +297,7 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 		will-change: transform;
 		transition: transform 0.3s;
 		&.active {
-			border: toRem(1) solid #000;
+			border: toRem(1) solid #000000;
 		}
 	}
 
@@ -313,7 +307,7 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 		font-size: toRem(14);
 		line-height: toRem(18);
 		&.active {
-			font-weight: 600;
+			font-weight: 800;
 		}
 	}
 }

@@ -125,29 +125,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 });
 
-<<<<<<< HEAD
-=======
-// function toggleSidebar() {
-// 	const sidebar = document.querySelector('.sidebar');  // Отримуємо елемент сайдбару
-// 	sidebar.classList.toggle('visible');  // Додаємо або видаляємо клас 'visible'
-
-// 	// Якщо сайдбар став видимим, додаємо обробник події на кліки поза сайдбаром
-// 	if (sidebar.classList.contains('visible')) {
-// 		document.addEventListener('click', handleClickOutside);  // Додаємо обробник події
-// 	} else {
-// 		// Якщо сайдбар приховуваний, видаляємо обробник події
-// 		document.removeEventListener('click', handleClickOutside);
-// 	}
-// }
-
-// function handleClickOutside(event) {
-// 	const sidebar = document.querySelector('.sidebar');
-// 	if (!sidebar.contains(event.target) && !event.target.closest('.filter-icon')) {
-// 		sidebar.classList.remove('visible');
-// 		document.removeEventListener('click', handleClickOutside);
-// 	}
-// }
->>>>>>> 4bf9ddcf01791bf600eda7930ab9101499c87a2e
 
 
 document.querySelectorAll('.custom-select').forEach(select => {
@@ -184,34 +161,21 @@ document.addEventListener('DOMContentLoaded', () => {
 	// Перевіряємо наявність елементів
 	if (!sizeItems.length || !clearButton) return;
 
-	const updateClearButtonVisibility = () => {
-		// Перевіряємо, чи є активні розміри
-		const hasActiveSizes = Array.from(sizeItems).some(item => item.classList.contains('active'));
-		clearButton.hidden = !hasActiveSizes; // Показуємо або ховаємо кнопку залежно від стану
-	};
-
 	sizeItems.forEach(item => {
 		item.addEventListener('click', () => {
 			// Перемикаємо активний стан кнопки
 			item.classList.toggle('active');
-			updateClearButtonVisibility(); // Оновлюємо видимість кнопки Clear
 		});
 	});
 
 	clearButton.addEventListener('click', () => {
 		// Знімаємо клас active з усіх кнопок
 		sizeItems.forEach(item => item.classList.remove('active'));
-		updateClearButtonVisibility(); // Ховаємо кнопку Clear
 		console.log('All sizes cleared!');
 	});
-
-	updateClearButtonVisibility(); // Перевіряємо стан кнопки при завантаженні сторінки
 });
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 4bf9ddcf01791bf600eda7930ab9101499c87a2e
 // Отримуємо всі посилання категорій
 const categoryLinks = document.querySelectorAll('.item-sidebar__link');
 
@@ -276,36 +240,6 @@ categoryLinks.forEach(link => {
 });
 
 
-//=======================
-// document.addEventListener('scroll', () => {
-// 	const filterIcon = document.querySelector('.filter-icon');
-
-// 	// Перевірка на наявність елемента
-// 	if (!filterIcon) return;
-
-// 	const scrollThreshold = 50; // Скільки пікселів потрібно прокрутити вниз, щоб додати клас
-
-// 	if (window.scrollY > scrollThreshold) {
-// 		filterIcon.classList.add('scrolled');
-// 	} else {
-// 		filterIcon.classList.remove('scrolled');
-// 	}
-// });
-
-// document.addEventListener('scroll', () => {
-// 	const filterIcon = document.querySelector('.sidebar');
-// 	const scrollThreshold = 50; // Скільки пікселів потрібно прокрутити вниз, щоб додати клас
-
-// 	if (filterIcon) { // Перевіряємо, чи елемент існує
-// 		if (window.scrollY > scrollThreshold) {
-// 			filterIcon.classList.add('scrolled');
-// 		} else {
-// 			filterIcon.classList.remove('scrolled');
-// 		}
-// 	}
-// });
-
-
 
 //==================
 
@@ -315,7 +249,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	// Знаходимо всі елементи
 	const colorItems = document.querySelectorAll('.color__item');
 	const clearButton = document.querySelector('.item-sidebar__clear-btn--color');
-
 
 	// Перевіряємо, чи є кольори перед додаванням обробників
 	if (colorItems.length > 0) {
@@ -329,8 +262,6 @@ document.addEventListener('DOMContentLoaded', () => {
 				// Перевіряємо наявність дочірніх елементів перед зміною класів
 				if (colorBlock) colorBlock.classList.toggle('active');
 				if (colorName) colorName.classList.toggle('active');
-
-				updateClearButtonVisibility(); // Оновлюємо стан кнопки
 			});
 		});
 	}
@@ -347,11 +278,9 @@ document.addEventListener('DOMContentLoaded', () => {
 				if (colorBlock) colorBlock.classList.remove('active');
 				if (colorName) colorName.classList.remove('active');
 			});
-			updateClearButtonVisibility(); // Оновлюємо стан кнопки
 			console.log('All colors cleared!');
 		});
 	}
-
 });
 
 
@@ -373,31 +302,28 @@ document.addEventListener('DOMContentLoaded', function () {
 		checkboxes.forEach(checkbox => (checkbox.checked = false));
 		minPriceInput.value = '';
 		maxPriceInput.value = '';
-		updateClearButtonVisibility();
 	}
 
-	// Функція для оновлення видимості кнопки очищення
-	function updateClearButtonVisibility() {
-		if (!clearButton || !checkboxes || !minPriceInput || !maxPriceInput) return;
-
-		const anyChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
-		clearButton.hidden = !anyChecked && !minPriceInput.value && !maxPriceInput.value;
-	}
-
-	// Перевіряємо наявність елементів перед додаванням обробників
+	// Додаємо обробники подій для чекбоксів
 	if (checkboxes) {
 		checkboxes.forEach(checkbox => {
 			checkbox.addEventListener('change', function () {
-				updateClearButtonVisibility();
+				// Тут більше нічого не потрібно робити для видимості кнопки
 			});
 		});
 	}
 
+	// Додаємо обробники для полів вводу
 	if (minPriceInput && maxPriceInput) {
-		minPriceInput.addEventListener('input', updateClearButtonVisibility);
-		maxPriceInput.addEventListener('input', updateClearButtonVisibility);
+		minPriceInput.addEventListener('input', function () {
+			// Ніяких змін видимості кнопки
+		});
+		maxPriceInput.addEventListener('input', function () {
+			// Ніяких змін видимості кнопки
+		});
 	}
 
+	// Додаємо обробник для кнопки застосування фільтра
 	if (applyButton) {
 		applyButton.addEventListener('click', function () {
 			const minPrice = parseInt(minPriceInput?.value, 10);
@@ -408,19 +334,15 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 	}
 
+	// Додаємо обробник для кнопки очищення
 	if (clearButton) {
 		clearButton.addEventListener('click', clearFilters);
 	}
-
-<<<<<<< HEAD
-=======
-	// Ініціалізація видимості кнопки очищення
-	updateClearButtonVisibility();
->>>>>>> 4bf9ddcf01791bf600eda7930ab9101499c87a2e
 });
 
+
 document.addEventListener('DOMContentLoaded', () => {
-	const items = document.querySelectorAll('.collection__item');
+	const items = document.querySelectorAll('.item-collection');
 	const paginationLinks = document.querySelectorAll('.pagination__link');
 	// Визначаємо кількість айтемів на сторінці: 16 для index.html, 9 для інших сторінок
 	const itemsPerPage = window.location.pathname.includes('index.html') ? 16 : 12;
@@ -455,3 +377,55 @@ document.addEventListener('DOMContentLoaded', () => {
 	showPage(1);
 });
 
+// Приховуємо прелоадер після завантаження сторінки
+window.addEventListener('load', () => {
+	const preloader = document.getElementById('preloader'); // Знаходимо прелоадер
+	if (preloader) { // Перевіряємо, чи існує елемент
+		preloader.classList.add('hidden'); // Додаємо клас для приховування
+	}
+});
+
+// Додаємо обробники для посилань (плавний перехід між сторінками)
+document.querySelectorAll('.menu__link').forEach(link => {
+	link.addEventListener('click', function (e) {
+		e.preventDefault(); // Зупиняємо стандартну поведінку посилання
+		const href = this.href; // Отримуємо посилання для переходу
+
+		const preloader = document.getElementById('preloader'); // Знаходимо прелоадер
+		if (preloader) {
+			preloader.classList.remove('hidden'); // Показуємо прелоадер перед переходом
+		}
+
+		// Робимо затримку для анімації прелоадера перед переходом
+		setTimeout(() => {
+			window.location.href = href; // Переходимо на нову сторінку
+		}, 500); // Тривалість затримки (0.5 секунди)
+	});
+});
+
+
+window.onscroll = function () { scrollFunction() };
+
+function scrollFunction() {
+	let scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+	let pageHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+	let scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+	if (scrollToTopBtn) {
+		if (scrollPosition > pageHeight / 2) {
+			scrollToTopBtn.classList.add("visible");
+		} else {
+			scrollToTopBtn.classList.remove("visible");
+		}
+	}
+}
+
+let scrollToTopBtn = document.getElementById("scrollToTopBtn");
+if (scrollToTopBtn) {
+	scrollToTopBtn.onclick = function () { topFunction() };
+}
+
+function topFunction() {
+	window.scrollTo({ top: 0, behavior: 'smooth' });
+}

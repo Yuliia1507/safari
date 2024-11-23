@@ -511,14 +511,14 @@ textarea {
   transition: transform 0.3s, -webkit-transform 0.3s;
 }
 .color__color.active {
-  border: 0.0625rem solid #000;
+  border: 0.0625rem solid #000000;
 }
 .color__name {
   font-size: 0.875rem;
   line-height: 1.125rem;
 }
 .color__name.active {
-  font-weight: 600;
+  font-weight: 800;
 }
 
 .price {
