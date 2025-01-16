@@ -565,12 +565,7 @@ textarea {
   background-color: #ed165f;
   color: #fff;
 }
-@media (any-hover: hover) {
-  .size__item:hover {
-    background-color: #ed165f;
-    color: #fff;
-  }
-}
+
 
 .color {
   padding-top: 2rem;
