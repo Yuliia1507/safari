@@ -175,11 +175,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 });
 
-document.querySelectorAll('.size__item').forEach(item => {
-	item.addEventListener('mouseenter', () => item.classList.add('hover'));
-	item.addEventListener('mouseleave', () => item.classList.remove('hover'));
-});
-
 // Отримуємо всі посилання категорій
 const categoryLinks = document.querySelectorAll('.item-sidebar__link');
 

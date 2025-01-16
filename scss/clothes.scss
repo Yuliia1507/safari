@@ -253,23 +253,18 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 		border-radius: toRem(2);
 		border: toRem(1) solid rgba(0, 0, 0, 0.5);
 		transition: all 0.3s;
-		  touch-action: manipulation;
-
+		touch-action: manipulation;
 		&.active {
 			background-color: $pinkColor;
 			color: #fff;
 		}
-		&.hover {
-			background-color: $pinkColor;
-			color: #fff;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: $pinkColor;
+				color: #fff;
+			}
 		}
 	}
-}
-@media (hover: none), (pointer: coarse) {
-  .size__item:hover {
-    background: none;
-    color: inherit;
-  }
 }
 
 .color {

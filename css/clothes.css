@@ -468,17 +468,13 @@ textarea {
   background-color: #ed165f;
   color: #fff;
 }
-.size__item.hover {
-  background-color: #ed165f;
-  color: #fff;
-}
-
-@media (hover: none), (pointer: coarse) {
+@media (any-hover: hover) {
   .size__item:hover {
-    background: none;
-    color: inherit;
+    background-color: #ed165f;
+    color: #fff;
   }
 }
+
 .color {
   padding-top: 2rem;
   display: grid;
