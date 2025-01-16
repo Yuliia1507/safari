@@ -263,6 +263,12 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 				color: #fff;
 			}
 		}
+		@media (any-hover: none) {
+			&:hover {
+				background-color: №fff;
+				color: #000;
+			}
+		}
 	}
 }
 
