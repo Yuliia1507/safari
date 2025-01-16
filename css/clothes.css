@@ -466,18 +466,6 @@ textarea {
   background-color: #ed165f;
   color: #fff;
 }
-@media (any-hover: hover) {
-  .size__item:hover {
-    background-color: #ed165f;
-    color: #fff;
-  }
-}
-@media (any-hover: none) {
-  .size__item:hover {
-    background-color: #fff;
-    color: #000;
-  }
-}
 
 .color {
   padding-top: 2rem;

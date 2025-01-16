@@ -257,18 +257,18 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 			background-color: $pinkColor;
 			color: #fff;
 		}
-		@media (any-hover: hover) {
-			&:hover {
-				background-color: $pinkColor;
-				color: #fff;
-			}
-		}
-		@media (any-hover: none) {
-			&:hover {
-				background-color: #fff;
-				color: #000;
-			}
-		}
+		// @media (any-hover: hover) {
+		// 	&:hover {
+		// 		background-color: $pinkColor;
+		// 		color: #fff;
+		// 	}
+		// }
+		// @media (any-hover: none) {
+		// 	&:hover {
+		// 		background-color: #fff;
+		// 		color: #000;
+		// 	}
+		// }
 	}
 }
 
