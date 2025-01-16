@@ -40,6 +40,10 @@ body {
 		overscroll-behavior: none;
 	}
 }
+body.touch a:hover {
+	/* Вимикаємо стилі hover для сенсорних пристроїв */
+	pointer-events: none;
+}
 
 .wrapper {
 	overflow: clip;
@@ -492,7 +496,7 @@ body {
 .item-collection {
 	height: auto;
 	@include adaptiveValue("padding-bottom", 34, 20);
-	@include adaptiveValue ("min-height", 590, 500);
+	@include adaptiveValue("min-height", 590, 500);
 	padding-bottom: toRem(34);
 	flex-direction: column;
 	justify-content: center;
