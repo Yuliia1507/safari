@@ -257,18 +257,9 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 			background-color: $pinkColor;
 			color: #fff;
 		}
-		@media (hover: hover) and (pointer: fine) {
-			&:hover {
-				background-color: $pinkColor;
-				color: #fff;
-			}
-		}
-
-		@media (hover: none), (pointer: coarse) {
-			&:hover {
-				background-color: #fff;
-				color: #000;
-			}
+		&.hover {
+			background-color: $pinkColor;
+			color: #fff;
 		}
 	}
 }
