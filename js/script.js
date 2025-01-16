@@ -451,6 +451,3 @@ const observer = new IntersectionObserver((entries, observer) => {
 lazyImages.forEach(image => observer.observe(image));
 
 
-if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
-	document.body.classList.add('touch');
-}

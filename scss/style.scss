@@ -40,10 +40,7 @@ body {
 		overscroll-behavior: none;
 	}
 }
-body.touch a:hover {
-	/* Вимикаємо стилі hover для сенсорних пристроїв */
-	pointer-events: none;
-}
+
 
 .wrapper {
 	overflow: clip;
