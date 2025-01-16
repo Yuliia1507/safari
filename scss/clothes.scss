@@ -253,6 +253,8 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 		border-radius: toRem(2);
 		border: toRem(1) solid rgba(0, 0, 0, 0.5);
 		transition: all 0.3s;
+		  touch-action: manipulation;
+
 		&.active {
 			background-color: $pinkColor;
 			color: #fff;
