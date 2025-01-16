@@ -98,3 +98,9 @@ textarea {
 .size--shoes {
   grid-template-columns: repeat(3, 1fr);
 }
+@media (any-hover: hover) {
+  .size__item:hover {
+    background-color: #ed165f;
+    color: #fff;
+  }
+}

@@ -475,6 +475,12 @@ textarea {
   }
 }
 
+@media (hover: none), (pointer: coarse) {
+  .size__item:hover {
+    background: none;
+    color: inherit;
+  }
+}
 .color {
   padding-top: 2rem;
   display: grid;
