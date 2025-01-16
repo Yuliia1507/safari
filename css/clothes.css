@@ -466,13 +466,13 @@ textarea {
   background-color: #ed165f;
   color: #fff;
 }
-@media (any-hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   .size__item:hover {
     background-color: #ed165f;
     color: #fff;
   }
 }
-@media (any-hover: none) {
+@media (hover: none), (pointer: coarse) {
   .size__item:hover {
     background-color: #fff;
     color: #000;
